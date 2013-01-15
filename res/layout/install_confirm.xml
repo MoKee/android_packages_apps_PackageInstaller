@@ -116,6 +116,14 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:visibility="gone" />
+		    
+            <Spinner android:entries="@array/install_locations" 
+    		android:id="@+id/install_location" 
+    		android:prompt="@string/install_location"
+    		android:layout_weight="1.0"
+    		android:layout_width="0dip"
+    		android:layout_height="wrap_content"
+            />
 
             <Button android:id="@+id/cancel_button"
                     android:layout_width="0dip"

@@ -46,6 +46,7 @@ import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
 import android.widget.ScrollView;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -83,6 +84,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
     // Buttons to indicate user acceptance
     private Button mOk;
     private Button mCancel;
+    private Spinner mLocation;
     CaffeinatedScrollView mScrollView = null;
     private boolean mOkCanInstall = false;
 
@@ -305,6 +307,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mInstallConfirm.setVisibility(View.VISIBLE);
         mOk = (Button)findViewById(R.id.ok_button);
         mCancel = (Button)findViewById(R.id.cancel_button);
+        mLocation = (Spinner)findViewById(R.id.install_location);
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
         if (mScrollView == null) {
@@ -655,6 +658,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                 newIntent.putExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO,
                         mPkgInfo.applicationInfo);
                 newIntent.setData(mPackageURI);
+                newIntent.putExtra("location", mLocation.getSelectedItemPosition());
                 newIntent.setClass(this, InstallAppProgress.class);
                 String installerPackageName = getIntent().getStringExtra(
                         Intent.EXTRA_INSTALLER_PACKAGE_NAME);

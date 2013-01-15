@@ -78,4 +78,5 @@
     <string name="privacyPerms" msgid="1850527049572617">"隱私權"</string>
     <string name="devicePerms" msgid="6733560207731294504">"裝置存取權"</string>
     <string name="no_new_perms" msgid="6657813692169565975">"這項更新不需新權限。"</string>
+    <string name="install_location">安裝位置</string>
 </resources>
