@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Open Source Project
+<!--
+     Copyright (C) 2008 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,102 +15,124 @@
      limitations under the License.
 -->
 
-<!--
 
+<!--
   Defines the layout of the confirmation screen that gets displayed when an
   application is about to be uninstalled. Includes ok and cancel buttons
   to let the uinstallation continue or abort.
 -->
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <LinearLayout
-        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/uninstall_empty_panel"
         android:layout_alignParentTop="true"
-        android:orientation="vertical"
-        android:paddingBottom="8dip">
-
-        <!-- If an activity was specified, explains what package it's in. -->
-        <TextView
-            android:id="@+id/activity_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            style="@style/padded"
-            android:visibility="gone" />
-
-        <!-- The snippet (title & icon) about the application being uninstalled. -->
-        <include
-            layout="@layout/app_details"
-            android:id="@+id/uninstall_activity_snippet" />
-
-        <!-- uninstall application confirmation text -->
-        <TextView
-            android:id="@+id/uninstall_confirm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="?android:attr/textColorSecondary"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:paddingLeft="24dip"
-            android:paddingRight="24dip" />
-
-    </LinearLayout>
-
-    <!-- OK confirm and cancel buttons.  -->
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:divider="?android:attr/dividerHorizontal"
-            android:showDividers="beginning"
-            android:paddingTop="16dip">
+        android:layout_marginTop="100dp"
+        android:background="@drawable/panel_background"
+        android:orientation="vertical" >
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingBottom="8dip" >
+
+            <!-- If an activity was specified, explains what package it's in. -->
+
+            <TextView
+                android:id="@+id/activity_text"
+                style="@style/padded"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                android:visibility="gone" />
+
+            <!-- The snippet (title & icon) about the application being uninstalled. -->
+
+            <include
+                android:id="@+id/uninstall_activity_snippet"
+                layout="@layout/app_details" />
+
+            <!-- uninstall application confirmation text -->
+
+            <TextView
+                android:id="@+id/uninstall_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dip"
+                android:paddingRight="24dip"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="?android:attr/textColorSecondary" />
+        </LinearLayout>
+
+        <!-- OK confirm and cancel buttons. -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="vertical"
+            android:paddingTop="16dip"
+            android:showDividers="beginning" >
+
+            <LinearLayout
                 style="?android:attr/buttonBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:measureWithLargestChild="true">
+                android:measureWithLargestChild="true"
+                android:orientation="horizontal" >
 
-            <LinearLayout android:id="@+id/leftSpacer"
-                android:layout_weight="0.25"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone" />
+                <LinearLayout
+                    android:id="@+id/leftSpacer"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-            <Button android:id="@+id/cancel_button"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:text="@string/cancel"
-                android:maxLines="2"
-                style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:id="@+id/cancel_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:text="@string/cancel" />
 
-            <Button android:id="@+id/ok_button"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-                android:text="@string/ok"
-                android:maxLines="2"
-                style="?android:attr/buttonBarButtonStyle" />
+                <Button
+                    android:id="@+id/ok_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:text="@string/ok" />
 
-            <LinearLayout android:id="@+id/rightSpacer"
-                android:layout_width="0dip"
-                android:layout_weight="0.25"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="gone" />
-
+                <LinearLayout
+                    android:id="@+id/rightSpacer"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/uninstall_empty_panel"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_full" />
+
+</RelativeLayout>

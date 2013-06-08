@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Open Source Project
+<!--
+     Copyright (C) 2008 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,24 +15,38 @@
      limitations under the License.
 -->
 
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-    <include
-        layout="@layout/app_details"
+    <RelativeLayout
+        android:id="@+id/main_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/app_snippet"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:layout_above="@+id/empty_panel"
+        android:background="@drawable/panel_background" >
 
-    <include
-        layout="@layout/install_confirm"
-        android:id="@+id/install_confirm_panel"
+        <include
+            android:id="@+id/app_snippet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/app_details" />
+
+        <include
+            android:id="@+id/install_confirm_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_snippet"
+            layout="@layout/install_confirm" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/empty_panel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/app_snippet"
-        android:layout_alignParentBottom="true"/>
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_full" />
+
 </RelativeLayout>
-
-
