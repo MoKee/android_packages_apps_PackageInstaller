@@ -32,7 +32,7 @@ installation screens
         android:layout_width="32dip"
         android:layout_height="32dip"
         android:layout_marginLeft="8dip"
-        android:background="@color/transparent_full"
+        android:background="@android:color/transparent"
         android:layout_alignParentLeft="true"
         android:gravity="left"
         android:scaleType="centerCrop"/>
