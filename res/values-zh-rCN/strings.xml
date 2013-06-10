@@ -79,5 +79,4 @@
     <string name="devicePerms" msgid="6733560207731294504">"设备相关权限"</string>
     <string name="no_new_perms" msgid="6657813692169565975">"此更新不需要任何新的权限。"</string>
     <string name="install_location">安装位置</string>
-    <string name="unsafe_permisson_found_title">该应用可能会读取你的个人信息甚至扣费.\n\n是否现在对其权限进行管理?</string>
 </resources>

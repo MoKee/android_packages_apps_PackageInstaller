@@ -143,5 +143,4 @@
     <!-- Body text for new tab when there are no new permissions [CHAR LIMIT=NONE] -->
     <string name="no_new_perms">This update requires no new permissions.</string>
     <string name="install_location">Installation location</string>
-    <string name="unsafe_permisson_found_title">This app may read your privacy information,and even need pay fees.\n\nDo you want to manage permisson right now?</string>
 </resources>

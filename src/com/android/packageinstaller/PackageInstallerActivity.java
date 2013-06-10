@@ -88,7 +88,6 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
     private Spinner mLocation;
     CaffeinatedScrollView mScrollView = null;
     private boolean mOkCanInstall = false;
-    private boolean mHasPersonalPerm = false;
 
     static final String PREFS_ALLOWED_SOURCES = "allowed_sources";
 
@@ -274,7 +273,6 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                 if (NP > 0) {
                     ((ViewGroup)root.findViewById(R.id.privacylist)).addView(
                             perms.getPermissionsView(AppSecurityPermissions.WHICH_PERSONAL));
-                    mHasPersonalPerm = true;
                 } else {
                     root.findViewById(R.id.privacylist).setVisibility(View.GONE);
                 }
@@ -663,7 +661,6 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                         mPkgInfo.applicationInfo);
                 newIntent.setData(mPackageURI);
                 newIntent.putExtra("location", mLocation.getSelectedItemPosition());
-                newIntent.putExtra("hasPersonalPerm", mHasPersonalPerm);
                 newIntent.setClass(this, InstallAppProgress.class);
                 String installerPackageName = getIntent().getStringExtra(
                         Intent.EXTRA_INSTALLER_PACKAGE_NAME);

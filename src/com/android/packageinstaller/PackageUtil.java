@@ -44,7 +44,6 @@ public class PackageUtil {
     public static final String INTENT_ATTR_PERMISSIONS_LIST=PREFIX+"PermissionsList";
     //intent attribute strings related to uninstall
     public static final String INTENT_ATTR_PACKAGE_NAME=PREFIX+"PackageName";
-    public static PackageInfo PKGINFO;
 
     /**
      * Utility method to get application information for a given {@link File}
