@@ -65,8 +65,10 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
     private final int INSTALL_COMPLETE = 1;
     private Intent mLaunchIntent;
     private static final int DLG_OUT_OF_SPACE = 1;
+    private static final int PKG_HAS_PSN_PERM = 2;
     private CharSequence mLabel;
     private int mLocation = 0;
+    private boolean mHasPersonalPerm;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -133,6 +135,9 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
                     }
                     mDoneButton.setOnClickListener(InstallAppProgress.this);
                     mOkPanel.setVisibility(View.VISIBLE);
+                    if (mHasPersonalPerm) {
+                    	showDialogInner(PKG_HAS_PSN_PERM);
+                    }
                     break;
                 default:
                     break;
@@ -163,6 +168,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         mAppInfo = intent.getParcelableExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO);
         mPackageURI = intent.getData();
         mLocation = intent.getIntExtra("location", 0);
+        mHasPersonalPerm = intent.getBooleanExtra("hasPersonalPerm", false);
         final String scheme = mPackageURI.getScheme();
         if (scheme != null && !"file".equals(scheme) && !"package".equals(scheme)) {
             throw new IllegalArgumentException("unexpected scheme " + scheme);
@@ -194,7 +200,8 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
                         }
                     })
                     .setOnCancelListener(this)
-                    .create();
+                    .create();break;
+        case PKG_HAS_PSN_PERM:
         }
        return null;
    }
