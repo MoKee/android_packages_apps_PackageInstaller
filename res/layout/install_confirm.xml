@@ -154,7 +154,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:layout_weight="1"
-                android:filterTouchesWhenObscured="true"
                 android:maxLines="2"
                 android:text="@string/next" />
 
