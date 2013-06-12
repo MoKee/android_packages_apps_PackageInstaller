@@ -142,5 +142,4 @@
 
     <!-- Body text for new tab when there are no new permissions [CHAR LIMIT=NONE] -->
     <string name="no_new_perms">This update requires no new permissions.</string>
-    <string name="install_location">Installation location</string>
 </resources>

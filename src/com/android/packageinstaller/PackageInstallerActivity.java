@@ -309,7 +309,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mOk = (Button)findViewById(R.id.ok_button);
         mCancel = (Button)findViewById(R.id.cancel_button);
         mLocation = (Spinner)findViewById(R.id.install_location);
-	mLocation.setVisibility(Environment.isExternalStorageRemovable() ? Spinner.VISIBLE : Spinner.GONE);
+        mLocation.setVisibility(Environment.isExternalStorageRemovable() ? Spinner.VISIBLE : Spinner.GONE);
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
         if (mScrollView == null) {

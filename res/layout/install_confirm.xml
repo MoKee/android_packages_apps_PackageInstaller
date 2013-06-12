@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2008 The Android Open Source Project
+<!-- Copyright (C) 2008 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,36 +14,37 @@
      limitations under the License.
 -->
 
-
 <!--
+
   Defines the layout of the splash screen that displays the security
   settings required for an application and requests the confirmation of the
   user before it is installed.
 -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/install_confirm_question"
-        style="@style/padded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingTop="4dip"
-        android:layout_alignParentTop="true"
-        android:text="@string/install_confirm_question"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:id="@+id/install_confirm_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="@string/install_confirm_question"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            style="@style/padded"
+            android:paddingTop="4dip" />
 
     <ImageView
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_below="@id/install_confirm_question"
-        android:background="?android:attr/dividerHorizontal"
-        android:visibility="gone" />
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/install_confirm_question"
+            android:background="?android:attr/dividerHorizontal"
+            android:visibility="gone" />
 
     <FrameLayout
         android:id="@+id/filler"
@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:layout_below="@id/divider"
-        android:visibility="gone" >
+        android:visibility="gone">
     </FrameLayout>
 
     <TabHost
@@ -61,31 +61,27 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/filler"
         android:layout_above="@+id/bottom_button_panel"
-        android:layout_weight="1" >
+        android:layout_weight="1">
 
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:layout_height="match_parent">
 
-            <HorizontalScrollView
-                android:id="@+id/tabscontainer"
+            <HorizontalScrollView android:id="@+id/tabscontainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@*android:drawable/tab_unselected_holo"
                 android:fillViewport="true"
-                android:scrollbars="none" >
-
-                <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" >
-
+                android:scrollbars="none">
+                <FrameLayout android:layout_width="match_parent"
+                             android:layout_height="wrap_content">
                     <TabWidget
                         android:id="@android:id/tabs"
+                        android:orientation="horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal" />
+                        android:layout_gravity="center" />
                 </FrameLayout>
             </HorizontalScrollView>
 
@@ -93,41 +89,40 @@
                 android:id="@android:id/tabcontent"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="0" />
+                android:layout_weight="0"/>
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/pager"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"/>
+
         </LinearLayout>
     </TabHost>
 
-    <!-- OK confirm and cancel buttons. -->
-
+    <!-- OK confirm and cancel buttons.  -->
     <LinearLayout
-        android:id="@+id/bottom_button_panel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:divider="?android:attr/dividerHorizontal"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        android:showDividers="beginning" >
-
-        <LinearLayout
-            style="?android:attr/buttonBarStyle"
+            android:id="@+id/bottom_button_panel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:measureWithLargestChild="true"
-            android:orientation="horizontal" >
+            android:orientation="vertical"
+            android:divider="?android:attr/dividerHorizontal"
+            android:layout_alignParentBottom="true"
+            android:showDividers="beginning">
 
-            <LinearLayout
-                android:id="@+id/leftSpacer"
-                android:layout_width="0dip"
+        <LinearLayout
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
                 android:orientation="horizontal"
-                android:visibility="gone" />
+                android:measureWithLargestChild="true">
+
+            <LinearLayout android:id="@+id/leftSpacer"
+                    android:layout_weight="0.25"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
             <Spinner
                 android:id="@+id/install_location"
@@ -137,34 +132,31 @@
                 android:entries="@array/install_locations"
                 android:prompt="@string/install_location" />
 
-            <Button
-                android:id="@+id/cancel_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:text="@string/cancel" />
+            <Button android:id="@+id/cancel_button"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:text="@string/cancel"
+                    android:maxLines="2"
+                    style="?android:attr/buttonBarButtonStyle" />
 
-            <Button
-                android:id="@+id/ok_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:text="@string/next" />
+            <Button android:id="@+id/ok_button"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:text="@string/next"
+                    android:maxLines="2"
+                    style="?android:attr/buttonBarButtonStyle" />
 
-            <LinearLayout
-                android:id="@+id/rightSpacer"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:orientation="horizontal"
-                android:visibility="gone" />
+            <LinearLayout android:id="@+id/rightSpacer"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+
         </LinearLayout>
     </LinearLayout>
-
 </RelativeLayout>
