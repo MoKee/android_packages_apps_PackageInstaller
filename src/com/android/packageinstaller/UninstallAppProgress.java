@@ -31,6 +31,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -137,6 +138,7 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
         // Initialize views
         View snippetView = findViewById(R.id.app_snippet);
         PackageUtil.initSnippetForInstalledApp(this, mAppInfo, snippetView);
+        RelativeLayout RvMain = (RelativeLayout)findViewById(R.id.unprogress_main_panel);
         mStatusTextView = (TextView) findViewById(R.id.center_text);
         mStatusTextView.setText(R.string.uninstalling);
         mDeviceManagerButton = (Button) findViewById(R.id.device_manager_button);
@@ -159,6 +161,8 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
         mOkButton = (Button) findViewById(R.id.ok_button);
         mOkButton.setOnClickListener(this);
         mOkPanel.setVisibility(View.INVISIBLE);
+        RvMain.setBackgroundResource(mOkButton.getCurrentTextColor() == -789517 ? R.drawable.panel_background
+				: R.drawable.panel_background_light);
         PackageDeleteObserver observer = new PackageDeleteObserver();
         getPackageManager().deletePackage(mAppInfo.packageName, observer,
                 mAllUsers ? PackageManager.DELETE_ALL_USERS : 0);
