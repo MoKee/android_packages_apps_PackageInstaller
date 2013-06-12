@@ -22,107 +22,109 @@
 
     <!-- Launch and close buttons. -->
 
-<RelativeLayout 
-    android:layout_above="@id/empty_panel"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent"
-    android:layout_marginTop="100dp"
-    android:background="@drawable/panel_background">
-    <LinearLayout
-        android:id="@+id/buttons_panel"
+    <RelativeLayout
+        android:id="@+id/progress_main_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="?android:attr/dividerHorizontal"
-        android:orientation="vertical"
-        android:paddingTop="16dip"
-        android:layout_alignParentBottom="true"
-        android:showDividers="beginning" >
+        android:layout_above="@id/empty_panel"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/panel_background" >
 
         <LinearLayout
-            style="?android:attr/buttonBarStyle"
+            android:id="@+id/buttons_panel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:measureWithLargestChild="true"
-            android:orientation="horizontal" >
+            android:layout_alignParentBottom="true"
+            android:divider="?android:attr/dividerHorizontal"
+            android:orientation="vertical"
+            android:paddingTop="16dip"
+            android:showDividers="beginning" >
 
             <LinearLayout
-                android:id="@+id/leftSpacer"
-                android:layout_width="0dip"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:orientation="horizontal"
-                android:visibility="gone" />
+                android:measureWithLargestChild="true"
+                android:orientation="horizontal" >
 
-            <Button
-                android:id="@+id/done_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="left"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:text="@string/done" />
+                <LinearLayout
+                    android:id="@+id/leftSpacer"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
 
-            <Button
-                android:id="@+id/launch_button"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_weight="1"
-                android:maxLines="2"
-                android:text="@string/launch" />
+                <Button
+                    android:id="@+id/done_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:text="@string/done" />
 
-            <LinearLayout
-                android:id="@+id/rightSpacer"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.25"
-                android:orientation="horizontal"
-                android:visibility="gone" />
+                <Button
+                    android:id="@+id/launch_button"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:maxLines="2"
+                    android:text="@string/launch" />
+
+                <LinearLayout
+                    android:id="@+id/rightSpacer"
+                    android:layout_width="0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:orientation="horizontal"
+                    android:visibility="gone" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-    <include
-        android:id="@+id/app_snippet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        layout="@layout/app_details" />
-
-    <TextView
-        android:id="@+id/center_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/app_snippet"
-        android:gravity="left"
-        android:paddingLeft="32dip"
-        android:paddingRight="32dip"
-        android:paddingTop="16dip"
-        android:text="@string/installing"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <!-- This explanation text is shown only after the progress bar below goes away. -->
-
-    <ScrollView
-        android:id="@+id/center_scrollview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/buttons_panel"
-        android:layout_below="@id/center_text"
-        android:paddingBottom="16dip"
-        android:paddingLeft="16dip"
-        android:paddingTop="8dip" >
+        <include
+            android:id="@+id/app_snippet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            layout="@layout/app_details" />
 
         <TextView
-            android:id="@+id/center_explanation"
+            android:id="@+id/center_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:visibility="gone" />
-    </ScrollView>
-</RelativeLayout>
+            android:layout_below="@id/app_snippet"
+            android:gravity="left"
+            android:paddingLeft="32dip"
+            android:paddingRight="32dip"
+            android:paddingTop="16dip"
+            android:text="@string/installing"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <!-- This explanation text is shown only after the progress bar below goes away. -->
+
+        <ScrollView
+            android:id="@+id/center_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttons_panel"
+            android:layout_below="@id/center_text"
+            android:paddingBottom="16dip"
+            android:paddingLeft="16dip"
+            android:paddingTop="8dip" >
+
+            <TextView
+                android:id="@+id/center_explanation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:visibility="gone" />
+        </ScrollView>
+    </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/empty_panel"
