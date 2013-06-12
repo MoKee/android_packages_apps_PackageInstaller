@@ -38,6 +38,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -214,6 +215,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
 
     public void initView() {
         setContentView(R.layout.op_progress);
+        
         int installFlags = 0;
         PackageManager pm = getPackageManager();
         try {
@@ -241,12 +243,15 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         mStatusTextView = (TextView)findViewById(R.id.center_text);
         mStatusTextView.setText(R.string.installing);
         mExplanationTextView = (TextView) findViewById(R.id.center_explanation);
+        RelativeLayout RvMain = (RelativeLayout)findViewById(R.id.progress_main_panel);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mProgressBar.setIndeterminate(true);
         // Hide button till progress is being displayed
         mOkPanel = (View)findViewById(R.id.buttons_panel);
         mDoneButton = (Button)findViewById(R.id.done_button);
         mLaunchButton = (Button)findViewById(R.id.launch_button);
+        RvMain.setBackgroundResource(mLaunchButton.getCurrentTextColor() == -789517 ? R.drawable.panel_background
+        		: R.drawable.panel_background_light);
         mOkPanel.setVisibility(View.INVISIBLE);
 
         String installerPackageName = getIntent().getStringExtra(
