@@ -38,6 +38,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.io.File;
@@ -238,8 +239,14 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         }
         mLabel = as.label;
         PackageUtil.initSnippetForNewApp(this, as, R.id.app_snippet);
+        RelativeLayout lyProgress = (RelativeLayout)findViewById(R.id.progress_panel);
         mStatusTextView = (TextView)findViewById(R.id.center_text);
         mStatusTextView.setText(R.string.installing);
+        // Check Color from resource
+     	if (mStatusTextView.getTextColors().getDefaultColor() < (getResources().getColor(
+     			R.color.dark) / 2)) {
+     		lyProgress.setBackgroundResource(R.drawable.panel_background_light);
+     	}
         mExplanationTextView = (TextView) findViewById(R.id.center_explanation);
         mProgressBar = (ProgressBar) findViewById(R.id.progress_bar);
         mProgressBar.setIndeterminate(true);

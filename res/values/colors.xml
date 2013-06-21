@@ -18,5 +18,6 @@
     <color name="shadow">#cc222222</color>
     <color name="transparent_half">#60000000</color>
     <color name="transparent_full">#00000000</color>
+    <color name="dark">#ff000000</color>
 </resources>
 

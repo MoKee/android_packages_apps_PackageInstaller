@@ -46,6 +46,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TabHost;
@@ -306,7 +307,13 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
             ((TextView)findViewById(R.id.install_confirm_question)).setText(msg);
         }
         mInstallConfirm.setVisibility(View.VISIBLE);
+        RelativeLayout lyMain = (RelativeLayout)findViewById(R.id.main_panel);
         mOk = (Button)findViewById(R.id.ok_button);
+        // Check Color from resource
+     	if (mOk.getTextColors().getDefaultColor() < (getResources().getColor(
+     			R.color.dark) / 2)) {
+     		lyMain.setBackgroundResource(R.drawable.panel_background_light);
+     	}
         mCancel = (Button)findViewById(R.id.cancel_button);
         mLocation = (Spinner)findViewById(R.id.install_location);
         File MMC = new File("/storage/sdcard0");
