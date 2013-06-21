@@ -39,6 +39,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -183,12 +184,20 @@ public class UninstallerActivity extends Activity implements OnClickListener,
                 }
             }
 
+            LinearLayout lyUninstall = (LinearLayout)findViewById(R.id.uninstall_panel);
             View snippetView = findViewById(R.id.uninstall_activity_snippet);
             PackageUtil.initSnippetForInstalledApp(this, mAppInfo, snippetView);
 
             //initialize ui elements
+            
             mOk = (Button)findViewById(R.id.ok_button);
             mCancel = (Button)findViewById(R.id.cancel_button);
+            
+            // Check Color from resource
+         	if (mOk.getTextColors().getDefaultColor() < (getResources().getColor(
+         			R.color.dark) / 2)) {
+         		lyUninstall.setBackgroundResource(R.drawable.panel_background_light);
+         	}
             mOk.setOnClickListener(this);
             mCancel.setOnClickListener(this);
         }
