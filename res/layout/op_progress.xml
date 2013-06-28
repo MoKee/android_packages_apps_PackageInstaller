@@ -24,7 +24,7 @@
     android:layout_above="@id/empty_panel"
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
-    android:layout_marginTop="100dp"
+    android:layout_marginTop="30dp"
     android:background="@drawable/panel_background">
     
     <LinearLayout android:id="@+id/buttons_panel"
@@ -121,7 +121,7 @@
     <RelativeLayout
         android:id="@+id/empty_panel"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="30dp"
         android:layout_alignParentBottom="true"
         android:background="@color/transparent_full" />
 
