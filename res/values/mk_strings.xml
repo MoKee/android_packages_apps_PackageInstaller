@@ -19,5 +19,6 @@
     <string name="install_location">Installation location</string>
     <!-- quick mode -->
     <string name="quick_mode_installing">Installing <xliff:g id="app_name">%1$s</xliff:g></string>
-    <string name="quick_mode_installed">Application Installed</string>
+    <string name="quick_mode_installed"><xliff:g id="app_name">%1$s</xliff:g> Installed.</string>
+    <string name="quick_mode_uninstalling"><xliff:g id="app_name">%1$s</xliff:g> Uninstalled</string>
 </resources>

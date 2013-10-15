@@ -91,7 +91,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
                     }
                     if (isQuickMode) {
                         if (msg.arg1 == PackageManager.INSTALL_SUCCEEDED) {
-                            Toast.makeText(mContext, getString(R.string.quick_mode_installed),
+                            Toast.makeText(mContext, getString(R.string.quick_mode_installed, mLabel),
                                     Toast.LENGTH_SHORT).show();
                         } else if (msg.arg1 == PackageManager.INSTALL_FAILED_INSUFFICIENT_STORAGE) {
                             Toast.makeText(mContext, getString(R.string.out_of_space_dlg_text, mLabel),
