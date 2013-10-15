@@ -18,8 +18,7 @@
             android:supportsRtl="true">
         <activity android:name=".PackageInstallerActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:excludeFromRecents="true"
-                >
+                android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <action android:name="android.intent.action.INSTALL_PACKAGE" />
@@ -35,13 +34,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".InstallAppProgress"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                >
+                android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
         <activity android:name=".UninstallerActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
-                android:excludeFromRecents="true"
-                >
+                android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.intent.action.DELETE" />
                 <action android:name="android.intent.action.UNINSTALL_PACKAGE" />
@@ -50,13 +47,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".UninstallAppProgress"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                >
+                android:configChanges="orientation|keyboardHidden|screenSize">
         </activity>
         <activity android:name=".GrantActivity"
                   android:configChanges="orientation|keyboardHidden|screenSize"
-                  android:excludeFromRecents="true"
-                  >
+                  android:excludeFromRecents="true">
             <intent-filter>
                 <action android:name="android.content.pm.action.REQUEST_PERMISSION" />
                 <category android:name="android.intent.category.DEFAULT" />

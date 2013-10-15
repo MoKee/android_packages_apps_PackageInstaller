@@ -178,9 +178,9 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
             ((TextView)findViewById(R.id.install_confirm_question)).setText(msg);
         }
         mInstallConfirm.setVisibility(View.VISIBLE);
-        RelativeLayout lyMain = (RelativeLayout)findViewById(R.id.main_panel);
         mOk = (Button)findViewById(R.id.ok_button);
         // Check Color from resource
+        RelativeLayout lyMain = (RelativeLayout)findViewById(R.id.main_panel);
      	if (mOk.getTextColors().getDefaultColor() < (getResources().getColor(
      			R.color.dark) / 2)) {
      		lyMain.setBackgroundResource(R.drawable.panel_background_light);

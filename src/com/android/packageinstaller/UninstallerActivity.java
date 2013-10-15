@@ -184,16 +184,15 @@ public class UninstallerActivity extends Activity implements OnClickListener,
                 }
             }
 
-            LinearLayout lyUninstall = (LinearLayout)findViewById(R.id.uninstall_panel);
             View snippetView = findViewById(R.id.uninstall_activity_snippet);
             PackageUtil.initSnippetForInstalledApp(this, mAppInfo, snippetView);
 
             //initialize ui elements
-            
             mOk = (Button)findViewById(R.id.ok_button);
             mCancel = (Button)findViewById(R.id.cancel_button);
             
             // Check Color from resource
+            LinearLayout lyUninstall = (LinearLayout)findViewById(R.id.uninstall_panel);
          	if (mOk.getTextColors().getDefaultColor() < (getResources().getColor(
          			R.color.dark) / 2)) {
          		lyUninstall.setBackgroundResource(R.drawable.panel_background_light);

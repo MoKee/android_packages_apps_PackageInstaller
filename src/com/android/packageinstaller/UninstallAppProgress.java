@@ -136,7 +136,6 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
 
         setContentView(R.layout.uninstall_progress);
         // Initialize views
-        RelativeLayout lyUnProgress = (RelativeLayout)findViewById(R.id.un_progress_panel);
         View snippetView = findViewById(R.id.app_snippet);
         PackageUtil.initSnippetForInstalledApp(this, mAppInfo, snippetView);
         mStatusTextView = (TextView) findViewById(R.id.center_text);
@@ -161,6 +160,7 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
         mOkButton = (Button) findViewById(R.id.ok_button);
         mOkButton.setOnClickListener(this);
         // Check Color from resource
+        RelativeLayout lyUnProgress = (RelativeLayout)findViewById(R.id.un_progress_panel);
      	if (mOkButton.getTextColors().getDefaultColor() < (getResources().getColor(
      			R.color.dark) / 2)) {
      		lyUnProgress.setBackgroundResource(R.drawable.panel_background_light);

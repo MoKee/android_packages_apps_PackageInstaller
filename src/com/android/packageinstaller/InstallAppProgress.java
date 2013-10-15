@@ -242,10 +242,10 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         }
         mLabel = as.label;
         PackageUtil.initSnippetForNewApp(this, as, R.id.app_snippet);
-        RelativeLayout lyProgress = (RelativeLayout)findViewById(R.id.progress_panel);
         mStatusTextView = (TextView)findViewById(R.id.center_text);
         mStatusTextView.setText(R.string.installing);
         // Check Color from resource
+        RelativeLayout lyProgress = (RelativeLayout)findViewById(R.id.progress_panel);
      	if (mStatusTextView.getTextColors().getDefaultColor() < (getResources().getColor(
      			R.color.dark) / 2)) {
      		lyProgress.setBackgroundResource(R.drawable.panel_background_light);
@@ -269,8 +269,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         VerificationParams verificationParams = new VerificationParams(null, originatingURI,
                 referrer, originatingUid, manifestDigest);
         PackageInstallObserver observer = new PackageInstallObserver();
-        switch(mLocation)
-        {
+        switch(mLocation) {
         case 1:
         	installFlags |= PackageManager.INSTALL_INTERNAL;
         	break;
