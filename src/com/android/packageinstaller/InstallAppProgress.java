@@ -19,6 +19,7 @@ package com.android.packageinstaller;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
@@ -41,6 +42,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.File;
 import java.util.List;
@@ -71,6 +73,8 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
     private static final int DLG_OUT_OF_SPACE = 1;
     private CharSequence mLabel;
     private int mLocation = 0;
+    private boolean isQuickMode = true;
+    private Context mContext;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -85,58 +89,71 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
                         finish();
                         return;
                     }
-                    // Update the status text
-                    mProgressBar.setVisibility(View.INVISIBLE);
-                    // Show the ok button
-                    int centerTextLabel;
-                    int centerExplanationLabel = -1;
-                    LevelListDrawable centerTextDrawable = (LevelListDrawable) getResources()
-                            .getDrawable(R.drawable.ic_result_status);
-                    if (msg.arg1 == PackageManager.INSTALL_SUCCEEDED) {
-                        mLaunchButton.setVisibility(View.VISIBLE);
-                        centerTextDrawable.setLevel(0);
-                        centerTextLabel = R.string.install_done;
-                        // Enable or disable launch button
-                        mLaunchIntent = getPackageManager().getLaunchIntentForPackage(
-                                mAppInfo.packageName);
-                        boolean enabled = false;
-                        if(mLaunchIntent != null) {
-                            List<ResolveInfo> list = getPackageManager().
-                                    queryIntentActivities(mLaunchIntent, 0);
-                            if (list != null && list.size() > 0) {
-                                enabled = true;
-                            }
-                        }
-                        if (enabled) {
-                            mLaunchButton.setOnClickListener(InstallAppProgress.this);
+                    if (isQuickMode) {
+                        if (msg.arg1 == PackageManager.INSTALL_SUCCEEDED) {
+                            Toast.makeText(mContext, getString(R.string.quick_mode_installed),
+                                    Toast.LENGTH_SHORT).show();
+                        } else if (msg.arg1 == PackageManager.INSTALL_FAILED_INSUFFICIENT_STORAGE) {
+                            Toast.makeText(mContext, getString(R.string.out_of_space_dlg_text, mLabel),
+                                    Toast.LENGTH_SHORT).show();
                         } else {
-                            mLaunchButton.setEnabled(false);
+                            Toast.makeText(mContext, getString(R.string.install_failed),
+                                    Toast.LENGTH_SHORT).show();
                         }
-                    } else if (msg.arg1 == PackageManager.INSTALL_FAILED_INSUFFICIENT_STORAGE){
-                        showDialogInner(DLG_OUT_OF_SPACE);
-                        return;
                     } else {
-                        // Generic error handling for all other error codes.
-                        centerTextDrawable.setLevel(1);
-                        centerExplanationLabel = getExplanationFromErrorCode(msg.arg1);
-                        centerTextLabel = R.string.install_failed;
-                        mLaunchButton.setVisibility(View.INVISIBLE);
+                        // Update the status text
+                        mProgressBar.setVisibility(View.INVISIBLE);
+                        // Show the ok button
+                        int centerTextLabel = -1;
+                        int centerExplanationLabel = -1;
+                        LevelListDrawable centerTextDrawable = (LevelListDrawable) getResources()
+                                .getDrawable(R.drawable.ic_result_status);
+                        if (msg.arg1 == PackageManager.INSTALL_SUCCEEDED) {
+                            mLaunchButton.setVisibility(View.VISIBLE);
+                            centerTextDrawable.setLevel(0);
+                            centerTextLabel = R.string.install_done;
+                            // Enable or disable launch button
+                            mLaunchIntent = getPackageManager().getLaunchIntentForPackage(
+                                    mAppInfo.packageName);
+                            boolean enabled = false;
+                            if (mLaunchIntent != null) {
+                                List<ResolveInfo> list = getPackageManager().
+                                        queryIntentActivities(mLaunchIntent, 0);
+                                if (list != null && list.size() > 0) {
+                                    enabled = true;
+                                }
+                            }
+                            if (enabled) {
+                                mLaunchButton.setOnClickListener(InstallAppProgress.this);
+                            } else {
+                                mLaunchButton.setEnabled(false);
+                            }
+                        } else if (msg.arg1 == PackageManager.INSTALL_FAILED_INSUFFICIENT_STORAGE) {
+                            showDialogInner(DLG_OUT_OF_SPACE);
+                            return;
+                        } else {
+                            // Generic error handling for all other error codes.
+                            centerTextDrawable.setLevel(1);
+                            centerExplanationLabel = getExplanationFromErrorCode(msg.arg1);
+                            centerTextLabel = R.string.install_failed;
+                            mLaunchButton.setVisibility(View.INVISIBLE);
+                        }
+                        if (centerTextDrawable != null) {
+                            centerTextDrawable.setBounds(0, 0,
+                                    centerTextDrawable.getIntrinsicWidth(),
+                                    centerTextDrawable.getIntrinsicHeight());
+                            mStatusTextView.setCompoundDrawables(centerTextDrawable, null, null, null);
+                        }
+                        mStatusTextView.setText(centerTextLabel);
+                        if (centerExplanationLabel != -1) {
+                            mExplanationTextView.setText(centerExplanationLabel);
+                            mExplanationTextView.setVisibility(View.VISIBLE);
+                        } else {
+                            mExplanationTextView.setVisibility(View.GONE);
+                        }
+                        mDoneButton.setOnClickListener(InstallAppProgress.this);
+                        mOkPanel.setVisibility(View.VISIBLE);
                     }
-                    if (centerTextDrawable != null) {
-                    centerTextDrawable.setBounds(0, 0,
-                            centerTextDrawable.getIntrinsicWidth(),
-                            centerTextDrawable.getIntrinsicHeight());
-                        mStatusTextView.setCompoundDrawables(centerTextDrawable, null, null, null);
-                    }
-                    mStatusTextView.setText(centerTextLabel);
-                    if (centerExplanationLabel != -1) {
-                        mExplanationTextView.setText(centerExplanationLabel);
-                        mExplanationTextView.setVisibility(View.VISIBLE);
-                    } else {
-                        mExplanationTextView.setVisibility(View.GONE);
-                    }
-                    mDoneButton.setOnClickListener(InstallAppProgress.this);
-                    mOkPanel.setVisibility(View.VISIBLE);
                     break;
                 default:
                     break;
@@ -163,6 +180,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        mContext = this;
         Intent intent = getIntent();
         mAppInfo = intent.getParcelableExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO);
         mPackageURI = intent.getData();
@@ -289,6 +307,11 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         } else {
             pm.installPackageWithVerificationAndEncryption(mPackageURI, observer, installFlags,
                     installerPackageName, verificationParams, null);
+        }
+        if (isQuickMode) {
+            onBackPressed();
+            Toast.makeText(this, getString(R.string.quick_mode_installing, mLabel), Toast.LENGTH_SHORT)
+                    .show();
         }
     }
 

@@ -17,4 +17,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- select install location -->
     <string name="install_location">安装位置</string>
+    <!-- quick mode -->
+    <string name="quick_mode_installing">正在安装 <xliff:g id="app_name">%1$s</xliff:g></string>
+    <string name="quick_mode_installed">应用已安装</string>
 </resources>

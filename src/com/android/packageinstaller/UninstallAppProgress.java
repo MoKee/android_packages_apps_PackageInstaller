@@ -114,6 +114,7 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
         mAppInfo = intent.getParcelableExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO);
         mAllUsers = intent.getBooleanExtra(Intent.EXTRA_UNINSTALL_ALL_USERS, false);
         initView();
+        onBackPressed();
     }
     
     class PackageDeleteObserver extends IPackageDeleteObserver.Stub {
