@@ -21,28 +21,19 @@
   to let the uinstallation continue or abort.
 -->
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/uninstall_panel"
+        android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/uninstall_empty_panel"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/panel_background"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingBottom="8dip" >
+        android:orientation="vertical"
+        android:paddingBottom="8dip">
 
         <!-- If an activity was specified, explains what package it's in. -->
         <TextView
@@ -119,15 +110,6 @@
                 android:orientation="horizontal"
                 android:visibility="gone" />
 
-            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/uninstall_empty_panel"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparent_full" />
-
-</RelativeLayout>
+</LinearLayout>

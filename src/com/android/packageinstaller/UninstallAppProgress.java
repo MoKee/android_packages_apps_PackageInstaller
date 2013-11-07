@@ -31,7 +31,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -159,19 +158,10 @@ public class UninstallAppProgress extends Activity implements OnClickListener {
         mOkPanel = (View) findViewById(R.id.ok_panel);
         mOkButton = (Button) findViewById(R.id.ok_button);
         mOkButton.setOnClickListener(this);
-        // Check Color from resource
-        RelativeLayout lyUnProgress = (RelativeLayout)findViewById(R.id.un_progress_panel);
-     	if (mOkButton.getTextColors().getDefaultColor() < (getResources().getColor(
-     			R.color.dark) / 2)) {
-     		lyUnProgress.setBackgroundResource(R.drawable.panel_background_light);
-     	}
         mOkPanel.setVisibility(View.INVISIBLE);
         PackageDeleteObserver observer = new PackageDeleteObserver();
-        Toast.makeText(this, getString(R.string.quick_mode_uninstalling, getPackageManager().getApplicationLabel(mAppInfo)), Toast.LENGTH_SHORT)
-                    .show();
         getPackageManager().deletePackage(mAppInfo.packageName, observer,
                 mAllUsers ? PackageManager.DELETE_ALL_USERS : 0);
-        onBackPressed();
     }
 
     public void onClick(View v) {

@@ -19,13 +19,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <RelativeLayout 
-        android:id="@+id/un_progress_panel"
-        android:layout_above="@id/empty_panel"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-    	android:background="@drawable/panel_background"
-        android:layout_width="match_parent">
     <!-- Button bar with OK button -->
     <LinearLayout android:id="@+id/ok_panel"
             android:layout_width="match_parent"
@@ -113,13 +106,5 @@
                 android:text="@string/manage_device_administrators" />
                 
     </LinearLayout>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/empty_panel"
-        android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparent_full" />
 
 </RelativeLayout>

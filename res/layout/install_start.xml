@@ -19,33 +19,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/main_panel"
+    <include
+        layout="@layout/app_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:layout_above="@+id/empty_panel"
-        android:background="@drawable/panel_background" >
+        android:id="@+id/app_snippet"/>
 
-        <include
-            layout="@layout/app_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/app_snippet"/>
-
-        <include
-            layout="@layout/install_confirm"
-            android:id="@+id/install_confirm_panel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/app_snippet"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/empty_panel"
+    <include
+        layout="@layout/install_confirm"
+        android:id="@+id/install_confirm_panel"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentBottom="true"
-        android:background="@color/transparent_full" />
+        android:layout_height="wrap_content"
+        android:layout_below="@id/app_snippet"
+        android:layout_alignParentBottom="true"/>
 </RelativeLayout>
+
+

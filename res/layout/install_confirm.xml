@@ -21,7 +21,7 @@
   user before it is installed.
 -->
 
-<RelativeLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -31,7 +31,6 @@
             android:id="@+id/install_confirm_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:text="@string/install_confirm_question"
             android:textAppearance="?android:attr/textAppearanceMedium"
             style="@style/padded"
@@ -42,7 +41,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_below="@id/install_confirm_question"
             android:background="?android:attr/dividerHorizontal"
             android:visibility="gone" />
 
@@ -51,7 +49,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_below="@id/divider"
         android:visibility="gone">
     </FrameLayout>
 
@@ -59,8 +56,6 @@
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/filler"
-        android:layout_above="@+id/bottom_button_panel"
         android:layout_weight="1">
 
         <LinearLayout
@@ -102,12 +97,10 @@
 
     <!-- OK confirm and cancel buttons.  -->
     <LinearLayout
-            android:id="@+id/bottom_button_panel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:divider="?android:attr/dividerHorizontal"
-            android:layout_alignParentBottom="true"
             android:showDividers="beginning">
 
         <LinearLayout
@@ -123,14 +116,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:visibility="gone" />
-
-            <Spinner
-                android:id="@+id/install_location"
-                android:layout_width="0dip"
-                android:layout_height="wrap_content"
-                android:layout_weight="1.0"
-                android:entries="@array/install_locations"
-                android:prompt="@string/install_location" />
 
             <Button android:id="@+id/cancel_button"
                     android:layout_width="0dip"
@@ -148,6 +133,7 @@
                     android:layout_weight="1"
                     android:text="@string/next"
                     android:maxLines="2"
+                    android:filterTouchesWhenObscured="true"
                     style="?android:attr/buttonBarButtonStyle" />
 
             <LinearLayout android:id="@+id/rightSpacer"
@@ -159,4 +145,4 @@
 
         </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</LinearLayout>
