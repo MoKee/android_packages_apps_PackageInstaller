@@ -36,6 +36,7 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.VerificationParams;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v4.view.ViewPager;
@@ -47,6 +48,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -87,6 +90,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
     // Buttons to indicate user acceptance
     private Button mOk;
     private Button mCancel;
+    private Spinner mLocation;
     CaffeinatedScrollView mScrollView = null;
     private boolean mOkCanInstall = false;
 
@@ -204,6 +208,10 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mInstallConfirm.setVisibility(View.VISIBLE);
         mOk = (Button)findViewById(R.id.ok_button);
         mCancel = (Button)findViewById(R.id.cancel_button);
+        mLocation = (Spinner)findViewById(R.id.install_location);
+        File MMC = new File("/storage/sdcard0");
+        File EXTMMC = new File("/storage/sdcard1");
+        mLocation.setVisibility(MMC.exists() && EXTMMC.exists() || Environment.isExternalStorageRemovable() ? Spinner.VISIBLE : Spinner.GONE);
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
         if (mScrollView == null) {
@@ -593,6 +601,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                 newIntent.putExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO,
                         mPkgInfo.applicationInfo);
                 newIntent.setData(mPackageURI);
+                newIntent.putExtra("location", mLocation.getSelectedItemPosition());
                 newIntent.setClass(this, InstallAppProgress.class);
                 newIntent.putExtra(InstallAppProgress.EXTRA_MANIFEST_DIGEST, mPkgDigest);
                 newIntent.putExtra(
