@@ -47,6 +47,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
+import android.widget.GridLayout;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TabHost;
@@ -98,6 +99,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
 
     private static final String TAB_ID_ALL = "all";
     private static final String TAB_ID_NEW = "new";
+    private static final String TAB_ID_VERSION = "version";
 
     // Dialog identifiers used in showDialog
     private static final int DLG_BASE = 0;
@@ -127,6 +129,8 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mScrollView = null;
         mOkCanInstall = false;
         int msg = 0;
+        LayoutInflater inflater = (LayoutInflater)getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
         if (mPkgInfo != null) {
             AppSecurityPermissions perms = new AppSecurityPermissions(this, mPkgInfo);
             final int NP = perms.getPermissionCount(AppSecurityPermissions.WHICH_PERSONAL);
@@ -145,22 +149,22 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                     mScrollView.addView(perms.getPermissionsView(
                             AppSecurityPermissions.WHICH_NEW));
                 } else {
-                    LayoutInflater inflater = (LayoutInflater)getSystemService(
-                            Context.LAYOUT_INFLATER_SERVICE);
                     TextView label = (TextView)inflater.inflate(R.layout.label, null);
                     label.setText(R.string.no_new_perms);
                     mScrollView.addView(label);
                 }
                 adapter.addTab(tabHost.newTabSpec(TAB_ID_NEW).setIndicator(
                         getText(R.string.newPerms)), mScrollView);
-            } else  {
+            }
+            // There is a new tab of version info, always show tabs.
+            /*
+            else  {
                 findViewById(R.id.tabscontainer).setVisibility(View.GONE);
                 findViewById(R.id.divider).setVisibility(View.VISIBLE);
             }
+            */
             if (NP > 0 || ND > 0) {
                 permVisible = true;
-                LayoutInflater inflater = (LayoutInflater)getSystemService(
-                        Context.LAYOUT_INFLATER_SERVICE);
                 View root = inflater.inflate(R.layout.permissions_list, null);
                 if (mScrollView == null) {
                     mScrollView = (CaffeinatedScrollView)root.findViewById(R.id.scrollview);
@@ -180,6 +184,27 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                 adapter.addTab(tabHost.newTabSpec(TAB_ID_ALL).setIndicator(
                         getText(R.string.allPerms)), root);
             }
+            // Show version
+            GridLayout layoutVersion = (GridLayout)inflater.inflate(R.layout.app_version, null);
+            ((TextView)layoutVersion.findViewById(R.id.package_name)).setText(mPkgInfo.applicationInfo.packageName);
+            ((TextView)layoutVersion.findViewById(R.id.app_new_version)).setText(mPkgInfo.versionName);
+            if (mAppInfo != null) {
+                PackageInfo pkgCurrent = null;
+                try {
+                    pkgCurrent = mPm.getPackageInfo(mAppInfo.packageName, PackageManager.GET_UNINSTALLED_PACKAGES);
+                    if (pkgCurrent == null) {
+                        ((TextView)layoutVersion.findViewById(R.id.app_current_version)).setText(R.string.not_available);
+                    } else {
+                        ((TextView)layoutVersion.findViewById(R.id.app_current_version)).setText(pkgCurrent.versionName);
+                    }
+                } catch (PackageManager.NameNotFoundException ex) {
+                    ((TextView)layoutVersion.findViewById(R.id.app_current_version)).setText(R.string.not_available);
+                }
+            } else {
+                ((TextView)layoutVersion.findViewById(R.id.app_current_version)).setText(R.string.not_available);
+            }
+            adapter.addTab(tabHost.newTabSpec(TAB_ID_VERSION).setIndicator(
+                    getText(R.string.appVersion)), layoutVersion);
         }
         mInstallFlowAnalytics.setPermissionsDisplayed(permVisible);
         if (!permVisible) {
@@ -495,6 +520,10 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mInstallConfirm = findViewById(R.id.install_confirm_panel);
         mInstallConfirm.setVisibility(View.INVISIBLE);
         PackageUtil.initSnippetForNewApp(this, as, R.id.app_snippet);
+
+        // Show version in the title
+        View appSnippet = this.findViewById(R.id.app_snippet);
+        ((TextView)appSnippet.findViewById(R.id.app_name)).setText(as.label + " " + mPkgInfo.versionName);
 
         mOriginatingUid = getOriginatingUid(intent);
 
