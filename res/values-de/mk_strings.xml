@@ -15,13 +15,9 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- select install location -->
-    <string name="install_location">安裝位置</string>
 
     <!-- Tab label for version information [CHAR LIMIT=20] -->
-    <string name="appVersion">版本信息</string>
-
-    <string name="currentVersion">當前版本：</string>
-    <string name="newVersion">新版本：</string>
-    <string name="not_available">無</string>
+    <string name="currentVersion">Aktuelle Version:</string>
+    <string name="newVersion">Neue Version:</string>
+    <string name="not_available">nicht verfügbar</string>
 </resources>
