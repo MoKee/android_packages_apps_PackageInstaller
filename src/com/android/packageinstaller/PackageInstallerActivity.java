@@ -38,6 +38,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.SystemClock;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
 import android.provider.Settings;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
@@ -206,10 +208,18 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mInstallConfirm.setVisibility(View.VISIBLE);
         mOk = (Button)findViewById(R.id.ok_button);
         mCancel = (Button)findViewById(R.id.cancel_button);
+
         mLocation = (Spinner)findViewById(R.id.install_location);
-        File MMC = new File("/storage/sdcard0");
-        File EXTMMC = new File("/storage/sdcard1");
-        mLocation.setVisibility(MMC.exists() && EXTMMC.exists() || Environment.isExternalStorageRemovable() ? Spinner.VISIBLE : Spinner.GONE);
+        StorageManager mStorageManager = StorageManager.from(this);
+        StorageVolume[] storageVolumes = mStorageManager.getVolumeList();
+        for (StorageVolume volume : storageVolumes) {
+            if (mStorageManager.getVolumeState(volume.getPath())
+                    .equals(Environment.MEDIA_MOUNTED) && volume.isRemovable()) {
+                mLocation.setVisibility(Spinner.VISIBLE);
+                break;
+            }
+        }
+
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
         if (mScrollView == null) {
