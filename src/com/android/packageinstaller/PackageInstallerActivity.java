@@ -213,6 +213,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         StorageManager mStorageManager = StorageManager.from(this);
         StorageVolume[] storageVolumes = mStorageManager.getVolumeList();
         for (StorageVolume volume : storageVolumes) {
+            if (volume.isEmulated()) break;
             if (mStorageManager.getVolumeState(volume.getPath())
                     .equals(Environment.MEDIA_MOUNTED) && volume.isRemovable()) {
                 mLocation.setVisibility(Spinner.VISIBLE);
