@@ -72,6 +72,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
     private Intent mLaunchIntent;
     private static final int DLG_OUT_OF_SPACE = 1;
     private CharSequence mLabel;
+    private int mLocation = 0;
 
     private Handler mHandler = new Handler() {
         public void handleMessage(Message msg) {
@@ -171,6 +172,7 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         mInstallFlowAnalytics = intent.getParcelableExtra(EXTRA_INSTALL_FLOW_ANALYTICS);
         mInstallFlowAnalytics.setContext(this);
         mPackageURI = intent.getData();
+        mLocation = intent.getIntExtra("location", 0);
 
         final String scheme = mPackageURI.getScheme();
         if (scheme != null && !"file".equals(scheme) && !"package".equals(scheme)) {
@@ -270,6 +272,15 @@ public class InstallAppProgress extends Activity implements View.OnClickListener
         VerificationParams verificationParams = new VerificationParams(null, originatingURI,
                 referrer, originatingUid, manifestDigest);
         PackageInstallObserver observer = new PackageInstallObserver();
+
+        switch(mLocation) {
+            case 1:
+                installFlags |= PackageManager.INSTALL_INTERNAL;
+                break;
+            case 2:
+                installFlags |= PackageManager.INSTALL_EXTERNAL;
+                break;
+        }
 
         if ("package".equals(mPackageURI.getScheme())) {
             try {
