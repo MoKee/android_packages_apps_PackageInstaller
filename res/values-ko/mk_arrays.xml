@@ -16,8 +16,8 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>За замовчанням</item>
-    <item>Внутрішнє</item>
-    <item>Зовнішнє</item>
+    <item>기본</item>
+    <item>내부</item>
+    <item>외부</item>
   </string-array>
 </resources>
