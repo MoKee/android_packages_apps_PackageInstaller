@@ -16,8 +16,8 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>per defecte</item>
-    <item>Interna</item>
-    <item>Externa</item>
+    <item>Подразумевано</item>
+    <item>Интерно</item>
+    <item>Меморијска картица</item>
   </string-array>
 </resources>
