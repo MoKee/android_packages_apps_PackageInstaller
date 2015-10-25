@@ -16,8 +16,8 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>預設</item>
-    <item>內部</item>
-    <item>外部</item>
+    <item>Standard</item>
+    <item>Intern</item>
+    <item>Extern</item>
   </string-array>
 </resources>
