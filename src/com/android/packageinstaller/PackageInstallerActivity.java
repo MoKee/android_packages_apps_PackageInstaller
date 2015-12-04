@@ -1,6 +1,7 @@
 /*
 **
 ** Copyright 2007, The Android Open Source Project
+** Copyright 2013-2016, The MoKee Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -38,7 +39,10 @@ import android.content.pm.VerificationParams;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.SystemClock;
+import android.os.storage.StorageManager;
+import android.os.storage.StorageVolume;
 import android.os.UserManager;
 import android.provider.Settings;
 import android.support.v4.view.ViewPager;
@@ -49,6 +53,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 
@@ -92,6 +98,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
     // Buttons to indicate user acceptance
     private Button mOk;
     private Button mCancel;
+    private Spinner mLocation;
     CaffeinatedScrollView mScrollView = null;
     private boolean mOkCanInstall = false;
 
@@ -205,6 +212,19 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         mInstallConfirm.setVisibility(View.VISIBLE);
         mOk = (Button)findViewById(R.id.ok_button);
         mCancel = (Button)findViewById(R.id.cancel_button);
+
+        mLocation = (Spinner)findViewById(R.id.install_location);
+        StorageManager mStorageManager = StorageManager.from(this);
+        StorageVolume[] storageVolumes = mStorageManager.getVolumeList();
+        for (StorageVolume volume : storageVolumes) {
+            if (volume.isEmulated()) break;
+            if (mStorageManager.getVolumeState(volume.getPath())
+                    .equals(Environment.MEDIA_MOUNTED) && volume.isRemovable()) {
+                mLocation.setVisibility(Spinner.VISIBLE);
+                break;
+            }
+        }
+
         mOk.setOnClickListener(this);
         mCancel.setOnClickListener(this);
         if (mScrollView == null) {
@@ -686,6 +706,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         newIntent.putExtra(PackageUtil.INTENT_ATTR_APPLICATION_INFO,
                 mPkgInfo.applicationInfo);
         newIntent.setData(mPackageURI);
+        newIntent.putExtra("location", mLocation.getSelectedItemPosition());
         newIntent.setClass(this, InstallAppProgress.class);
         newIntent.putExtra(InstallAppProgress.EXTRA_MANIFEST_DIGEST, mPkgDigest);
         newIntent.putExtra(
