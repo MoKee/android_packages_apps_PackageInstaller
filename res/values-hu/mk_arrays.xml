@@ -16,8 +16,8 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>Standaard</item>
-    <item>Intern</item>
-    <item>Extern</item>
+    <item>Alapértelmezés</item>
+    <item>Belső</item>
+    <item>Külső</item>
   </string-array>
 </resources>

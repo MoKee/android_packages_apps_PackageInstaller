@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>predeterminado</item>
+    <item>Predeterminado</item>
     <item>Interna</item>
     <item>Externa</item>
   </string-array>
