@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>默认位置</item>
+    <item>默认</item>
     <item>内置储存</item>
     <item>储存卡</item>
   </string-array>
