@@ -15,6 +15,11 @@
 -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
     <!-- select install location -->
     <string name="install_location">Installation location</string>
+
+    <!-- unknown apps dlg -->
+    <string name="just_once">Just once</string>
+
 </resources>
