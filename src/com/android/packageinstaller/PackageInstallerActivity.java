@@ -488,6 +488,27 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
     }
 
     @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            int[] grandResults) {
+        boolean allowed = true;
+        switch (requestCode) {
+            case REQUEST_CODE_STORAGE_PERMS:
+                for (int res : grandResults) {
+                    allowed = allowed && (res == PackageManager.PERMISSION_GRANTED);
+                }
+                break;
+            default:
+                allowed = false;
+                break;
+        }
+        if (allowed) {
+            finishOnCreate();
+        } else {
+            finish();
+        }
+    }
+
+    @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
@@ -495,8 +516,13 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         int permissionCheck = checkCallingOrSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
         if (!hasPermissions()) {
             requestNecessaryPermissions();
+        } else {
+            finishOnCreate();
         }
 
+    }
+
+    private void finishOnCreate() {
         mPm = getPackageManager();
         mInstaller = mPm.getPackageInstaller();
         mUserManager = (UserManager) getSystemService(Context.USER_SERVICE);
