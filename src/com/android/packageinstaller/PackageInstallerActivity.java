@@ -17,6 +17,7 @@
 */
 package com.android.packageinstaller;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
@@ -472,9 +473,29 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                 ? RESULT_OK : RESULT_FIRST_USER, result);
     }
 
+    private static final int REQUEST_CODE_STORAGE_PERMS = 321;
+
+    private boolean hasPermissions() {
+        int res = checkCallingOrSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+        return (res == PackageManager.PERMISSION_GRANTED);
+    }
+
+    private void requestNecessaryPermissions() {
+        String[] permissions = new String[] {
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+        };
+        requestPermissions(permissions, REQUEST_CODE_STORAGE_PERMS);
+    }
+
     @Override
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+
+        // Check permissions first when install.
+        int permissionCheck = checkCallingOrSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+        if (!hasPermissions()) {
+            requestNecessaryPermissions();
+        }
 
         mPm = getPackageManager();
         mInstaller = mPm.getPackageInstaller();
