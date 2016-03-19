@@ -17,4 +17,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- select install location -->
   <string name="install_location">설치 위치</string>
+  <!-- unknown apps dlg -->
 </resources>

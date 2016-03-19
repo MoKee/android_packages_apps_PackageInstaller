@@ -17,4 +17,5 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- select install location -->
   <string name="install_location">Θέση εγκατάστασης</string>
+  <!-- unknown apps dlg -->
 </resources>
