@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Шлях встановлення</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Тільки один раз</string>
 </resources>
