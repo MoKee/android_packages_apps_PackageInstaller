@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Lokasi instalasi</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Hanya sekali</string>
 </resources>
