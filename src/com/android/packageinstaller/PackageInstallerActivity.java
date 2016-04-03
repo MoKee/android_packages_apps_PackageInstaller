@@ -513,7 +513,6 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         super.onCreate(icicle);
 
         // Check permissions first when install.
-        int permissionCheck = checkCallingOrSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
         if (!hasPermissions()) {
             requestNecessaryPermissions();
         } else {
