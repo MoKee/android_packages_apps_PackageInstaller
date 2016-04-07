@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Percorso di installazione</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Solo una volta</string>
 </resources>
