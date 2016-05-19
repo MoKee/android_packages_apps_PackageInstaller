@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Installatie locatie</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Eenmalig</string>
 </resources>

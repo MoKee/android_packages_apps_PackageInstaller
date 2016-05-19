@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Speicherort für die Installation</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Nur diesmal</string>
 </resources>
