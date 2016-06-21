@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- select install location -->
-  <string name="install_location">Lokasi instalasi</string>
+  <string name="install_location">Lokasi pemasangan</string>
   <!-- unknown apps dlg -->
   <string name="just_once">Hanya sekali</string>
 </resources>
