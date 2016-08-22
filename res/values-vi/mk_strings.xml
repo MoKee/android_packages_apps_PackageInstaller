@@ -18,4 +18,5 @@
   <!-- select install location -->
   <string name="install_location">Vị trí cài đặt</string>
   <!-- unknown apps dlg -->
+  <string name="just_once">Chỉ một lần</string>
 </resources>
