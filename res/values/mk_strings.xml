@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2016 The MoKee Open Source Project
+<!-- Copyright (C) 2012-2017 The MoKee Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -18,5 +18,13 @@
 
     <!-- unknown apps dialog -->
     <string name="just_once">Just once</string>
+
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">Version Info</string>
+    <string name="currentVersion">Current Version:</string>
+    <string name="newVersion">New Version:</string>
+    <string name="not_available">not available</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">This app requires no permissions.</string>
 
 </resources>
