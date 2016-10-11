@@ -1,6 +1,7 @@
 /*
 **
 ** Copyright 2007, The Android Open Source Project
+** Copyright 2013-2016, The MoKee Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -226,6 +227,10 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
         case DLG_UNKNOWN_SOURCES:
             return new AlertDialog.Builder(this)
                     .setMessage(R.string.unknown_apps_dlg_text)
+                    .setNeutralButton(R.string.just_once, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            initiateInstall();
+                        }})
                     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Log.i(TAG, "Finishing off activity so that user can navigate to settings manually");
