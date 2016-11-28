@@ -17,7 +17,7 @@
 <resources>
   <string-array name="install_locations">
     <item>Privzeto</item>
-    <item>Internal</item>
-    <item>External</item>
+    <item>Notranji</item>
+    <item>Zunanji</item>
   </string-array>
 </resources>
