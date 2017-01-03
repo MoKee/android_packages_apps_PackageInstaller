@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>Standar</item>
+    <item>Bawaan</item>
     <item>Internal</item>
     <item>Eksternal</item>
   </string-array>
