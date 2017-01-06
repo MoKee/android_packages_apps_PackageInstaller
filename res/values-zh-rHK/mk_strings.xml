@@ -18,5 +18,5 @@
   <!-- select install location -->
   <string name="install_location">安裝位置</string>
   <!-- unknown apps dlg -->
-  <string name="just_once">進一次</string>
+  <string name="just_once">僅一次</string>
 </resources>
