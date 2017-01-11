@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>Domyślnie</item>
+    <item>Domyślne</item>
     <item>Pamięć telefonu</item>
     <item>Pamięć zewnętrzna</item>
   </string-array>
