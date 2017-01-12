@@ -17,7 +17,7 @@
 <resources>
   <string-array name="install_locations">
     <item>預設位置</item>
-    <item>內部儲存</item>
-    <item>儲存卡</item>
+    <item>內部儲存空間</item>
+    <item>外部儲存空間</item>
   </string-array>
 </resources>
