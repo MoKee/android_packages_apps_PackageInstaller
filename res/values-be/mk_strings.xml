@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- select install location -->
-  <string name="install_location">Месца ўстаноўкі</string>
+  <string name="install_location">Месца ўсталёўкі</string>
   <!-- unknown apps dlg -->
   <string name="just_once">Толькі цяпер</string>
 </resources>
