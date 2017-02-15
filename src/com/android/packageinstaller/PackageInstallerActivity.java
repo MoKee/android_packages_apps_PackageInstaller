@@ -233,7 +233,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
                     .setMessage(R.string.unknown_apps_dlg_text)
                     .setNeutralButton(R.string.just_once, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            processPackageUri(mPackageURI);
+                            initiateInstall();
                         }})
                     .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
