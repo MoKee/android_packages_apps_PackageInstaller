@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>Défaut</item>
+    <item>Par Défaut</item>
     <item>Mémoire interne</item>
     <item>Mémoire externe</item>
   </string-array>
