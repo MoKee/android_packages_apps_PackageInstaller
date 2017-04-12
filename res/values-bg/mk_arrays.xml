@@ -16,7 +16,7 @@
 -->
 <resources>
   <string-array name="install_locations">
-    <item>Основен</item>
+    <item>По подразбиране</item>
     <item>Вътрешна</item>
     <item>Външна</item>
   </string-array>
