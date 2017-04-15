@@ -49,8 +49,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AppSecurityPermissions;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -202,7 +202,7 @@ public class PackageInstallerActivity extends Activity implements OnCancelListen
 
         mScrollView = new CaffeinatedScrollView(this);
         mScrollView.setFillViewport(true);
-        GridLayout layoutVersion = (GridLayout)inflater.inflate(R.layout.app_version, null);
+        LinearLayout layoutVersion = (LinearLayout)inflater.inflate(R.layout.app_version, null);
         ((TextView)layoutVersion.findViewById(R.id.app_new_version)).setText(mPkgInfo.versionName);
         if (mAppInfo != null) {
             PackageInfo pkgCurrent = null;
