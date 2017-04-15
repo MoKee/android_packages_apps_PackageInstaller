@@ -19,5 +19,9 @@
   <string name="just_once">Pouze jednou</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Informace o verzi</string>
+  <string name="currentVersion">Aktuální verze:</string>
+  <string name="newVersion">Nová verze:</string>
+  <string name="not_available">není k dispozici</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Tato aplikace nevyžaduje žádná oprávnění.</string>
 </resources>
