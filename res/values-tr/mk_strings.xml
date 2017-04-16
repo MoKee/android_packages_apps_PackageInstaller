@@ -19,5 +19,9 @@
   <string name="just_once">Sadece bir kere</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Versiyon Bilgisi</string>
+  <string name="currentVersion">Türkiye </string>
+  <string name="newVersion">Root</string>
+  <string name="not_available">Root erişim</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Root erişim.</string>
 </resources>
