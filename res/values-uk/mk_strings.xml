@@ -19,5 +19,9 @@
   <string name="just_once">Тільки один раз</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Інформація про версію</string>
+  <string name="currentVersion">Поточна версія:</string>
+  <string name="newVersion">Нова версія:</string>
+  <string name="not_available">не доступно</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Цей додаток не потребує спеціальних дозволів.</string>
 </resources>

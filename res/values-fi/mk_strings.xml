@@ -19,5 +19,9 @@
   <string name="just_once">Vain kerran</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Versiotiedot</string>
+  <string name="currentVersion">Nykyinen versio:</string>
+  <string name="newVersion">Uusi Versio:</string>
+  <string name="not_available">ei saatavilla</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Tämä sovellus ei tarvitse käyttöoikeuksia.</string>
 </resources>
