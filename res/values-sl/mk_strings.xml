@@ -19,5 +19,9 @@
   <string name="just_once">Samo enkrat</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Informacije o različici</string>
+  <string name="currentVersion">Trenutna različica:</string>
+  <string name="newVersion">Nova različica:</string>
+  <string name="not_available">ni na voljo</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Ta aplikacije ne zahteva posebnih dovoljenj.</string>
 </resources>
