@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- unknown apps dialog -->
-  <string name="just_once">進一次</string>
+  <string name="just_once">僅一次</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">版本資訊</string>
   <string name="currentVersion">目前版本：</string>
