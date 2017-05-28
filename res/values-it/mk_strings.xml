@@ -19,5 +19,9 @@
   <string name="just_once">Solo una volta</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Informazioni versione</string>
+  <string name="currentVersion">Versione corrente:</string>
+  <string name="newVersion">Nuova versione:</string>
+  <string name="not_available">non disponibile</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Questa app non richiede permessi.</string>
 </resources>
