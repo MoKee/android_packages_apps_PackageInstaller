@@ -23,5 +23,5 @@
   <string name="newVersion">Nova različica:</string>
   <string name="not_available">ni na voljo</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">Ta aplikacije ne zahteva posebnih dovoljenj.</string>
+  <string name="no_perms">Ta aplikacija ne zahteva posebnih dovoljenj.</string>
 </resources>
