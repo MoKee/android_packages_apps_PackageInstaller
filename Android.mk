@@ -22,7 +22,9 @@ LOCAL_STATIC_ANDROID_LIBRARIES += \
 LOCAL_STATIC_JAVA_LIBRARIES := \
     xz-java
 
-LOCAL_PACKAGE_NAME := PackageInstaller
+LOCAL_AAPT_FLAGS += --rename-manifest-package com.mokee.packageinstaller
+
+LOCAL_PACKAGE_NAME := MoKeePackageInstaller
 LOCAL_CERTIFICATE := platform
 
 LOCAL_PRIVILEGED_MODULE := true
@@ -34,7 +36,7 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 include $(BUILD_PACKAGE)
 
-ifeq (PackageInstaller,$(LOCAL_PACKAGE_NAME))
+ifeq (MoKeePackageInstaller,$(LOCAL_PACKAGE_NAME))
 # Use the following include to make our test apk.
 ifeq (,$(ONE_SHOT_MAKEFILE))
 include $(call all-makefiles-under,$(LOCAL_PATH))
