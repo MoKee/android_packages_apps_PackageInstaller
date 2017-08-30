@@ -19,5 +19,8 @@
   <string name="just_once">Csak egyszer</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Verzió információ</string>
+  <string name="currentVersion">Aktuális verzió:</string>
+  <string name="newVersion">Új verzió:</string>
+  <string name="not_available">nem elérhető</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
 </resources>
