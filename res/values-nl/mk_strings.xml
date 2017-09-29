@@ -19,5 +19,9 @@
   <string name="just_once">Eenmalig</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Versie Info</string>
+  <string name="currentVersion">Huidige uitvoering:</string>
+  <string name="newVersion">Nieuwe uitvoering:</string>
+  <string name="not_available">Niet beschikbaar</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Deze toepassing vereist geen machtigingen.</string>
 </resources>
