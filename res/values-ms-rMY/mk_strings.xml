@@ -16,6 +16,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- unknown apps dialog -->
+  <string name="just_once">Hanya sekali</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
+  <string name="appVersion">Maklumat versi</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
 </resources>
