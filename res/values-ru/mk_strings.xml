@@ -16,7 +16,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- unknown apps dialog -->
-  <string name="just_once">Единожды</string>
+  <string name="just_once">Разрешить единожды</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Информация о версии</string>
   <string name="currentVersion">Текущая Версия:</string>
