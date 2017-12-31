@@ -19,8 +19,8 @@
   <string name="just_once">Разрешить единожды</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Информация о версии</string>
-  <string name="currentVersion">Текущая Версия:</string>
-  <string name="newVersion">Новая Версия:</string>
+  <string name="currentVersion">Текущая версия:</string>
+  <string name="newVersion">Новая версия:</string>
   <string name="not_available">Недоступно</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
   <string name="no_perms">Это приложение не требует разрешений.</string>
