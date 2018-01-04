@@ -17,5 +17,6 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- unknown apps dialog -->
   <!-- Tab label for version information [CHAR LIMIT=20] -->
+  <string name="appVersion">Impormasyon sa Bersyon</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
 </resources>
