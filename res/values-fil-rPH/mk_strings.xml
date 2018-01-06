@@ -21,6 +21,7 @@
   <string name="appVersion">Impormasyon para sa Bersyon</string>
   <string name="currentVersion">Kasalukuyang bersyon:</string>
   <string name="newVersion">Bagong bersyon:</string>
+  <string name="not_available">hindi magagamit</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
   <string name="no_perms">Ang app na ito ay hindi nangangailangan ng pahintulot.</string>
 </resources>
