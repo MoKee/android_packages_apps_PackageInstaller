@@ -19,5 +19,9 @@
   <string name="just_once">Hanya sekali</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Maklumat versi</string>
+  <string name="currentVersion">Versi semasa:</string>
+  <string name="newVersion">Versi baru:</string>
+  <string name="not_available">tidak didapati</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Aplikasi ini tidak memerlukan keizinan.</string>
 </resources>
