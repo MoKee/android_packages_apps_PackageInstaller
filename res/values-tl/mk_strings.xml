@@ -19,5 +19,9 @@
   <string name="just_once">Minsan lang</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Impormasyon sa Bersyon</string>
+  <string name="currentVersion">Kasalukuyang Bersyon:</string>
+  <string name="newVersion">Bagong Bersyon:</string>
+  <string name="not_available">hindi magagamit</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Ang app na ito ay hindi nangangailangan ng mga pahintulot.</string>
 </resources>
