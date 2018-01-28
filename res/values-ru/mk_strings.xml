@@ -21,7 +21,7 @@
   <string name="appVersion">Информация о версии</string>
   <string name="currentVersion">Текущая версия:</string>
   <string name="newVersion">Новая версия:</string>
-  <string name="not_available">Недоступно</string>
+  <string name="not_available">недоступно</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
   <string name="no_perms">Это приложение не требует разрешений.</string>
 </resources>
