@@ -18,7 +18,7 @@
   <!-- unknown apps dialog -->
   <string name="just_once">Chỉ một lần</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Thông tin Phiên bản</string>
+  <string name="appVersion">Thông tin phiên bản</string>
   <string name="currentVersion">Phiên bản hiện giờ:</string>
   <string name="newVersion">Phiên bản mới:</string>
   <string name="not_available">không sẵn sàng</string>

@@ -19,5 +19,9 @@
   <string name="just_once">Doar o dată</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Informatii versiune</string>
+  <string name="currentVersion">Versiunea curentă:</string>
+  <string name="newVersion">Noua versiune:</string>
+  <string name="not_available">indisponibil</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Această aplicație nu necesită permisiuni.</string>
 </resources>
