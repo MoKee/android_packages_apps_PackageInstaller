@@ -23,4 +23,5 @@
   <string name="newVersion">Új verzió:</string>
   <string name="not_available">nem elérhető</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">Ennek az alkalmazásnak nincs szüksége engedélyre.</string>
 </resources>
