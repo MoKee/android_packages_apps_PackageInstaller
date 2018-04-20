@@ -18,7 +18,7 @@
   <!-- unknown apps dialog -->
   <string name="just_once">Csak egyszer</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Verzió információ</string>
+  <string name="appVersion">Verzióinformáció</string>
   <string name="currentVersion">Aktuális verzió:</string>
   <string name="newVersion">Új verzió:</string>
   <string name="not_available">nem elérhető</string>
