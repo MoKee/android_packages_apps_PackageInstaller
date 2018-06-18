@@ -19,5 +19,7 @@
   <string name="just_once">Bara en gång</string>
   <!-- Tab label for version information [CHAR LIMIT=20] -->
   <string name="appVersion">Versionsinfo</string>
+  <string name="currentVersion">Nuvarande version:</string>
+  <string name="newVersion">Ny version:</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
 </resources>
