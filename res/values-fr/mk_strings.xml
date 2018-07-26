@@ -21,7 +21,7 @@
   <string name="appVersion">Informations de version</string>
   <string name="currentVersion">Version actuelle:</string>
   <string name="newVersion">Nouvelle version:</string>
-  <string name="not_available">indisponible</string>
+  <string name="not_available">non Disponible</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">Cette application ne requiert aucune autorisation.</string>
+  <string name="no_perms">Cette application ne demande aucune pérmissions.</string>
 </resources>
