@@ -17,5 +17,10 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- unknown apps dialog -->
   <!-- Tab label for version information [CHAR LIMIT=20] -->
+  <string name="appVersion">ข้อมูลเวอร์ชัน</string>
+  <string name="currentVersion">เวอร์ชันปัจจุบัน:</string>
+  <string name="newVersion">เวอร์ชันใหม่:</string>
+  <string name="not_available">ไม่พร้อมใช้งาน</string>
   <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+  <string name="no_perms">แอปนี้ไม่ได้ร้องขอสิทธิ์เพิ่มเติม</string>
 </resources>
