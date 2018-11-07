@@ -15,13 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <string name="just_once">Len raz</string>
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Informácie o verzii</string>
-  <string name="currentVersion">Aktuálna verzia:</string>
-  <string name="newVersion">Nová verzia</string>
-  <string name="not_available">nie je k dispozícii</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">Táto aplikácia vyžaduje žiadne povolenia.</string>
+    <!-- unknown apps dialog -->
+    <string name="just_once">Len raz</string>
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">Informácie o verzii</string>
+    <string name="currentVersion">Aktuálna verzia:</string>
+    <string name="newVersion">Nová verzia</string>
+    <string name="not_available">nie je k dispozícii</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">Táto aplikácia vyžaduje žiadne povolenia.</string>
 </resources>

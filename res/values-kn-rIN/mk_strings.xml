@@ -15,13 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <string name="just_once">ಕೇವಲ ಒಮ್ಮೆ</string>
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">ಆವೃತ್ತಿಯ ಮಾಹಿತಿ</string>
-  <string name="currentVersion">ಪ್ರಸ್ತುತ ಆವೃತ್ತಿ:</string>
-  <string name="newVersion">ಹೊಸ ಆವೃತ್ತಿ:</string>
-  <string name="not_available">ಲಭ್ಯವಿಲ್ಲ</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">ಈ ತಂತ್ರಾಂಶಕ್ಕೆ ಪರವಾನಗಿಗಳ ಅವಶ್ಯಕತೆಯಿಲ್ಲ.</string>
+    <!-- unknown apps dialog -->
+    <string name="just_once">ಕೇವಲ ಒಮ್ಮೆ</string>
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">ಆವೃತ್ತಿಯ ಮಾಹಿತಿ</string>
+    <string name="currentVersion">ಪ್ರಸ್ತುತ ಆವೃತ್ತಿ:</string>
+    <string name="newVersion">ಹೊಸ ಆವೃತ್ತಿ:</string>
+    <string name="not_available">ಲಭ್ಯವಿಲ್ಲ</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">ಈ ತಂತ್ರಾಂಶಕ್ಕೆ ಪರವಾನಗಿಗಳ ಅವಶ್ಯಕತೆಯಿಲ್ಲ.</string>
 </resources>

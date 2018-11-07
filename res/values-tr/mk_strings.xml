@@ -15,13 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <string name="just_once">Sadece bir kez</string>
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Sürüm Bilgisi</string>
-  <string name="currentVersion">Yüklü Sürüm:</string>
-  <string name="newVersion">Yeni Sürüm:</string>
-  <string name="not_available">mevcut değil</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">Bu uygulama hiçbir izin gerektirmiyor.</string>
+    <!-- unknown apps dialog -->
+    <string name="just_once">Sadece bir kez</string>
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">Sürüm Bilgisi</string>
+    <string name="currentVersion">Yüklü Sürüm:</string>
+    <string name="newVersion">Yeni Sürüm:</string>
+    <string name="not_available">mevcut değil</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">Bu uygulama hiçbir izin gerektirmiyor.</string>
 </resources>

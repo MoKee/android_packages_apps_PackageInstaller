@@ -15,13 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <string name="just_once">مرة واحدة فقط</string>
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">معلومات الإصدار</string>
-  <string name="currentVersion">الإصدار الحالي:</string>
-  <string name="newVersion">الإصدار الجديد:</string>
-  <string name="not_available">غير متوفر</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">هذا التطبيق لا يتطلب صلاحيات.</string>
+    <!-- unknown apps dialog -->
+    <string name="just_once">مرة واحدة فقط</string>
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">معلومات الإصدار</string>
+    <string name="currentVersion">الإصدار الحالي:</string>
+    <string name="newVersion">الإصدار الجديد:</string>
+    <string name="not_available">غير متوفر</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">هذا التطبيق لا يتطلب صلاحيات.</string>
 </resources>

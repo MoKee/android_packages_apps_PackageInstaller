@@ -15,13 +15,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <string name="just_once">Толькі цяпер</string>
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Iнфармацыя аб версіі</string>
-  <string name="currentVersion">Бягучая версія:</string>
-  <string name="newVersion">Новая версія:</string>
-  <string name="not_available">няма ў наяўнасці</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
-  <string name="no_perms">Гэта праграма не патрабуе ніякіх дазволаў.</string>
+    <!-- unknown apps dialog -->
+    <string name="just_once">Толькі цяпер</string>
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">Iнфармацыя аб версіі</string>
+    <string name="currentVersion">Бягучая версія:</string>
+    <string name="newVersion">Новая версія:</string>
+    <string name="not_available">няма ў наяўнасці</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <string name="no_perms">Гэта праграма не патрабуе ніякіх дазволаў.</string>
 </resources>

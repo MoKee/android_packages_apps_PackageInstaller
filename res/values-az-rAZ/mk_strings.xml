@@ -15,10 +15,10 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- unknown apps dialog -->
-  <!-- Tab label for version information [CHAR LIMIT=20] -->
-  <string name="appVersion">Versiya Məlumat</string>
-  <string name="currentVersion">Hazırki Versiya:</string>
-  <string name="newVersion">Yeni Versiya:</string>
-  <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
+    <!-- unknown apps dialog -->
+    <!-- Tab label for version information [CHAR LIMIT=20] -->
+    <string name="appVersion">Versiya Məlumat</string>
+    <string name="currentVersion">Hazırki Versiya:</string>
+    <string name="newVersion">Yeni Versiya:</string>
+    <!-- Body text for new tab when there are no permissions [CHAR LIMIT=NONE] -->
 </resources>
